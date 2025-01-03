@@ -1,8 +1,8 @@
 ---
-title: Course-Search
-emoji: 📚
-colorFrom: indigo
-colorTo: blue
+title: analytics-vidhya-search
+emoji: 🔍
+colorFrom: blue
+colorTo: yellow
 sdk: streamlit
 sdk_version: "1.28.0"
 app_file: app.py
