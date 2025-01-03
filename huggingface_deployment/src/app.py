@@ -1,30 +1,21 @@
 import streamlit as st
 import warnings
 import logging
-import os
+import json
 from search import CourseSearch
-from embeddings import CoursesEmbeddings
 
 # Suppress warnings
 warnings.filterwarnings('ignore')
 logging.getLogger('torch.classes').setLevel(logging.ERROR)
 
 st.set_page_config(
-    page_title="Course Search",
+    page_title="Analytics Vidhya Course Search",
     page_icon="📚",
     layout="wide"
 )
 
 @st.cache_resource
-def initialize_search():
-    # Check if vector store exists
-    if not os.path.exists("data/chroma_db"):
-        with st.spinner('First time setup: Creating vector store...'):
-            embedder = CoursesEmbeddings()
-            courses = embedder.load_courses()
-            documents = embedder.prepare_documents(courses)
-            vector_store = embedder.create_vector_store(documents)
-            vector_store.persist()
+def load_search_engine():
     return CourseSearch()
 
 def format_course_result(result):
@@ -59,7 +50,7 @@ def main():
     st.title("📚 Course Search")
     st.write("Search through courses using natural language!")
 
-    search_engine = initialize_search()
+    search_engine = load_search_engine()
     
     # Search interface
     col1, col2 = st.columns([3, 1])
