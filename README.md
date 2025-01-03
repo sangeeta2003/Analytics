@@ -1,8 +1,8 @@
 ---
-title: Analytics Vidhya Course Search
+title: Course-Search
 emoji: 📚
-colorFrom: blue
-colorTo: purple
+colorFrom: indigo
+colorTo: indigo
 sdk: streamlit
 sdk_version: "1.28.0"
 app_file: app.py
@@ -17,9 +17,7 @@ A smart search system for finding relevant courses using natural language querie
 - 🔍 Natural language search
 - 🧠 Semantic understanding
 - 📊 Real-time results
-- 🎯 Course recommendations
-
-## Technology
+- 🎯 Course recommendations## Technology
 - LangChain for RAG implementation
 - Sentence Transformers for embeddings
 - ChromaDB for vector storage
@@ -32,4 +30,4 @@ A smart search system for finding relevant courses using natural language querie
 
 ## Author
 - Created by Sangeeta
-- GitHub: [@sangeeta2003](https://github.com/sangeeta2003) 
+- GitHub: [@sangeeta2003](https://github.com/sangeeta2003)
