@@ -1,13 +1,12 @@
 ---
-title: Analytics Vidhya Course Search
-emoji: 📚
-colorFrom: blue
-colorTo: purple
-sdk: streamlit
-sdk_version: 1.28.0
-app_file: app.py
+title: "Analytics Vidhya Course Search"
+emoji: "📚"
+colorFrom: "blue"
+colorTo: "purple"
+sdk: "streamlit"
+sdk_version: "1.28.0"
+app_file: "app.py"
 pinned: false
-license: mit
 ---
 
 # Analytics Vidhya Course Search
