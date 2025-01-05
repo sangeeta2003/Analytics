@@ -9,6 +9,8 @@ app_file: app.py
 pinned: false
 ---
 
+Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+
 # Analytics Vidhya Course Search
 
 A smart search system for finding relevant courses using natural language queries.

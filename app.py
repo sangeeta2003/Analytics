@@ -27,34 +27,6 @@ def initialize_search():
             vector_store.persist()
     return CourseSearch()
 
-def format_course_result(result):
-    content = result.page_content
-    lines = content.split('\n')
-    
-    # Extract title and description
-    title = ""
-    description = ""
-    curriculum = []
-    
-    for line in lines:
-        if line.startswith("Title:"):
-            title = line.replace("Title:", "").strip()
-        elif line.startswith("Description:"):
-            description = line.replace("Description:", "").strip()
-        elif line.startswith("-"):
-            curriculum.append(line.strip())
-    
-    # Create formatted output
-    st.markdown(f"### {title}")
-    st.markdown(f"**Description:**\n{description}")
-    
-    if curriculum:
-        st.markdown("**Curriculum:**")
-        for item in curriculum:
-            st.markdown(item)
-    
-    st.divider()
-
 def main():
     st.title("📚 Course Search")
     st.write("Search through courses using natural language!")
@@ -81,7 +53,25 @@ def main():
                 st.warning("No matching courses found.")
             else:
                 for result in results:
-                    format_course_result(result)
+                    lines = result.page_content.split('\n')
+                    
+                    # Extract and display information
+                    title = next((line.replace("Title:", "").strip() 
+                                for line in lines if line.startswith("Title:")), "")
+                    description = next((line.replace("Description:", "").strip() 
+                                     for line in lines if line.startswith("Description:")), "")
+                    
+                    st.markdown(f"### {title}")
+                    st.markdown(f"**Description:**\n{description}")
+                    
+                    # Display curriculum items
+                    curriculum = [line.strip() for line in lines if line.startswith("-")]
+                    if curriculum:
+                        st.markdown("**Curriculum:**")
+                        for item in curriculum:
+                            st.markdown(item)
+                    
+                    st.divider()
 
 if __name__ == "__main__":
     main() 
