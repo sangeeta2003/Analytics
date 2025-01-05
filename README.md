@@ -1,8 +1,8 @@
 ---
-title: Analytics Vidhya Search
+title: analytics-vidhya-search
 emoji: 🤗
-colorFrom: indigo
-colorTo: indigo
+colorFrom: blue
+colorTo: yellow
 sdk: streamlit
 sdk_version: "1.28.0"
 app_file: app.py
