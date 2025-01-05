@@ -1,11 +1,11 @@
 ---
-title: "analytics-vidhya-search"
-emoji: "🔍"
-colorFrom: "gray"
-colorTo: "gray"
-sdk: "streamlit"
-sdk_version: "1.28.0"
-app_file: "app.py"
+title: analytics-vidhya-search
+emoji: 📚
+colorFrom: indigo
+colorTo: indigo
+sdk: streamlit
+sdk_version: 1.28.0
+app_file: app.py
 pinned: false
 ---
 
